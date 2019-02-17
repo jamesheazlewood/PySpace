@@ -74,7 +74,7 @@ class Shader:
 
 		#Get variable ids for each uniform
 		for k in _PYSPACE_GLOBAL_VARS:
-			self.keys[k] = glGetUniformLocation(program, '_' + k);
+			self.keys[k] = glGetUniformLocation(program, '_' + k)
 
 		#Return the program
 		return program

@@ -20,10 +20,10 @@ os.environ['SDL_VIDEO_CENTERED'] = '1'
 win_size = (1280, 720)
 
 #Maximum frames per second
-fps = 30
+fps = 60
 
 #Forces an 'up' orientation when True, free-camera when False
-gimbal_lock = False
+gimbal_lock = True
 
 #Mouse look speed
 look_speed = 0.003
@@ -43,9 +43,9 @@ speed_decel = 0.6
 
 clicking = False
 mouse_pos = None
-screen_center = (win_size[0]/2, win_size[1]/2)
+screen_center = (win_size[0] / 2, win_size[1] / 2)
 start_pos = [0, 0, 12.0]
-vel = np.zeros((3,), dtype=np.float32)
+vel = np.zeros((3,), dtype = np.float32)
 look_x = 0.0
 look_y = 0.0
 
@@ -77,7 +77,7 @@ def infinite_spheres():
 	obj.add(FoldRepeatX(2.0))
 	obj.add(FoldRepeatY(2.0))
 	obj.add(FoldRepeatZ(2.0))
-	obj.add(Sphere(0.5, (1.0, 1.0, 1.0), color=(0.9,0.9,0.5)))
+	obj.add(Sphere(0.5, ('0', 1.0, 1.0), color=(0.9, 0.9, 0.5)))
 	return obj
 
 def butterweed_hills():
@@ -144,7 +144,7 @@ def sierpinski_tetrahedron():
 	for i in range(9):
 		obj.add(FoldSierpinski())
 		obj.add(FoldScaleTranslate(2, -1))
-	obj.add(Tetrahedron(color=(0.8,0.8,0.5)))
+	obj.add(Tetrahedron(color=(0.8, 0.8, 0.5)))
 	return obj
 	
 def snow_stadium():
@@ -237,7 +237,7 @@ if __name__ == '__main__':
 	#======================================================
 	#               Change the fractal here
 	#======================================================
-	obj_render = tree_planet()
+	obj_render = infinite_spheres()
 	#======================================================
 
 	#======================================================
@@ -253,10 +253,10 @@ if __name__ == '__main__':
 	program = shader.compile(camera)
 	print("Compiled!")
 
-	matID = glGetUniformLocation(program, "iMat");
-	prevMatID = glGetUniformLocation(program, "iPrevMat");
-	resID = glGetUniformLocation(program, "iResolution");
-	ipdID = glGetUniformLocation(program, "iIPD");
+	matID = glGetUniformLocation(program, "iMat")
+	prevMatID = glGetUniformLocation(program, "iPrevMat")
+	resID = glGetUniformLocation(program, "iResolution")
+	ipdID = glGetUniformLocation(program, "iIPD")
 
 	glUseProgram(program)
 	glUniform2fv(resID, 1, win_size)
@@ -408,11 +408,11 @@ if __name__ == '__main__':
 		shader.set('pos', mat[3,:3])
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
-		glUniformMatrix4fv(matID, 1, False, mat);
-		glUniformMatrix4fv(prevMatID, 1, False, prevMat);
+		glUniformMatrix4fv(matID, 1, False, mat)
+		glUniformMatrix4fv(prevMatID, 1, False, prevMat)
 		prevMat = np.copy(mat)
 
-		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4)
 		pygame.display.flip()
 		clock.tick(fps)
 		frame_num += 1
