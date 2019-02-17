@@ -125,14 +125,44 @@ When building your own fractals, you can substitute numbers with string
 placeholders which can be tuned real-time with key bindings.
 
 In this example program:
-| Index |   Increase   |   Decrease   |
-|-------|--------------|--------------|
-| `[0]` | `[Insert]`   | `[Delete]`   |
-| `[1]` | `[Home]`     | `[End]`      |
-| `[2]` | `[PageUp]`   | `[PageDown]` |
-| `[3]` | `[NumPad7]`  | `[NumPad4]`  |
-| `[4]` | `[NumPad8]`  | `[NumPad5]`  |
-| `[5]` | `[NumPad9]`  | `[NumPad6]`  |
+
+<table>
+    <tr>
+        <th>Index</th>
+        <th>Increase</th>
+        <th>Decrease</th>
+    </tr>
+    <tr>
+        <td><code>[0]</code></td>
+        <td><code>[Insert]</code></td>
+        <td><code>[Delete]</code></td>
+    </tr>
+    <tr>
+        <td><code>[1]</code></td>
+        <td><code>[Home]</code></td>
+        <td><code>[End]</code></td>
+    </tr>
+    <tr>
+        <td><code>[2]</code></td>
+        <td><code>[PageUp]</code></td>
+        <td><code>[PageDown]</code></td>
+    </tr>
+    <tr>
+        <td><code>[3]</code></td>
+        <td><code>[NumPad 7]</code></td>
+        <td><code>[NumPad 4]</code></td>
+    </tr>
+    <tr>
+        <td><code>[4]</code></td>
+        <td><code>[NumPad 8]</code></td>
+        <td><code>[NumPad 5]</code></td>
+    </tr>
+    <tr>
+        <td><code>[5]</code></td>
+        <td><code>[NumPad 9]</code></td>
+        <td><code>[NumPad 6]</code></td>
+    </tr>
+</table>
 
 - Hold down `[left-shift]` to decrease rate 10x
 - Hold down `[right-shift]` to increase rate 10x 
