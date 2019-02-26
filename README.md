@@ -3,7 +3,50 @@ GLSL Fractal Ray Marcher in Python
 
 ## Initial Setup
 
+### Cloning and Forking
+Follow this article (https://help.github.com/en/articles/configuring-a-remote-for-a-fork)
+
+```
+$ remote add upstream git@github.com:HackerPoet/PySpace.git
+```
+
+To check:
+
+```
+$ git remote -v
+origin  git@github.com:jamesheazlewood/PySpace.git (fetch)
+origin  git@github.com:jamesheazlewood/PySpace.git (push)
+upstream        git@github.com:HackerPoet/PySpace.git (fetch)
+upstream        git@github.com:HackerPoet/PySpace.git (push)
+```
+
+Fetch latest repo:
+```
+$ git fetch upstream
+remote: Enumerating objects: 12, done.
+remote: Counting objects: 100% (12/12), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 9 (delta 3), reused 8 (delta 3), pack-reused 0
+Unpacking objects: 100% (9/9), done.
+From github.com:HackerPoet/PySpace
+ * [new branch]      master     -> upstream/master
+```
+
+Now check branches:
+```
+git branch -avv
+* master                  ac394c9 [origin/master] Changed table to HTML table in readme.md.
+  remotes/origin/HEAD     -> origin/master
+  remotes/origin/master   ac394c9 Changed table to HTML table in readme.md.
+  remotes/upstream/master 7a6dd32 Merge pull request #10 from emazzotta/master
+```
+
+### Mac and VS Code
+
+TODO
+
 ### Windows and VS Code
+
 
 #### Set up VS Code
 1. Open this project directory in VS Code.
